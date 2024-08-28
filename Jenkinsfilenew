@@ -1,0 +1,19 @@
+pipeline {
+    agent ( label 'slave1')
+
+    tools {
+        maven 'maven-3.9.9'    
+        }
+
+
+    stages {
+        stage ('BUILD-maven') {
+            steps {
+                sh '''
+                cd ./simple-war
+                mvn clean package
+                '''
+            }
+        }
+    }
+}
