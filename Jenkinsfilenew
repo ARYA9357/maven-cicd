@@ -12,7 +12,7 @@ pipeline {
         stage ('BUILD-maven') {
             steps {
                 sh '''
-                cd ./simple-war
+                cd ./maven   
                 mvn clean package
                 '''
             }
